@@ -1,0 +1,26 @@
+Thank you for filling the form
+
+here is your data
+request.GET for query parameters
+{% if request.GET %}
+<p>Query string parameters:</p>
+<ul>
+    {% for key, value in request.GET.items %}
+        <li>{{ key }}: {{ value }}</li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No query string parameters found.</p>
+{% endif %}
+
+
+{% if form_data %}
+        <p>Form data received:</p>
+        <ul>
+            {% for key, value in form_data.items %}
+                <li>{{ key }}: {{ value }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No form data received.</p>
+{% endif %}
